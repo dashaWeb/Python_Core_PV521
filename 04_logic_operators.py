@@ -66,16 +66,37 @@ print(login == 'mka' and password == 'mka5')
 #     print("number is not in range")
 
 
-login = input("Enter login :: ")
-if login == "cancel":
-    print("login canceled")
-elif login == "admin":
-    password = input("Enter password :: ")
-    if password == "step":
-        print("Welcome")
-    elif password == "cancel":
-        print("login canceled")
-    else:
-        print("Error password")
+# login = input("Enter login :: ")
+# if login == "cancel":
+#     print("login canceled")
+# elif login == "admin":
+#     password = input("Enter password :: ")
+#     if password == "step":
+#         print("Welcome")
+#     elif password == "cancel":
+#         print("login canceled")
+#     else:
+#         print("Error password")
+# else:
+#     print("I don't know you")
+
+
+
+choice = int(input('''
+    Select operation
+        1 - sum
+        2 - sub 
+        3 - mult
+        4 - div
+        5 - avg
+        Enter --> '''))
+
+a = 5
+b = 7
+
+if choice == 1:
+    print(f"{a} + {b} = {a+b}")
+elif choice == 2:
+    print(f"{a} - {b} = {a-b}")
 else:
-    print("I don't know you")
+    print("Error. Enter true choice")
