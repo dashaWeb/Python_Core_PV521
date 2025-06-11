@@ -47,13 +47,23 @@
 # інтернет-з’єднання в бітах на секунду. Порахувати, за скільки годин, хвилин і секунд
 # завантажується файл.
 
-size = int(input("Enter size file :: "))
-speed = int(input("Enter speed :: "))
-size = size * 8 * 1024 * 1024 * 1024
+# size = int(input("Enter size file :: "))
+# speed = int(input("Enter speed :: "))
+# size = size * 8 * 1024 * 1024 * 1024
 
-seconds = size // speed
-h = seconds // 3600
-seconds %= 3600
-m = seconds // 60
-seconds %= 60
-print(f"{h}:{m}:{seconds}")
+# seconds = size // speed
+# h = seconds // 3600
+# seconds %= 3600
+# m = seconds // 60
+# seconds %= 60
+# print(f"{h}:{m}:{seconds}")
+
+# print(f"{chr(9552)*10} Test {chr(9552)*10}")
+print(chr(9556)+chr(9552)*50+chr(9559))
+print()
+print(chr(9553)+" "*10+"Pory roku"+" "*31+chr(9553))
+print()
+print(chr(9568)+chr(9552)*12+chr(9574),end="")
+print(chr(9552)*12+chr(9574),end="")
+print(chr(9552)*12+chr(9574),end="")
+print(chr(9552)*11+chr(9571),end="")
