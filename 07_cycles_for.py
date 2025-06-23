@@ -64,35 +64,58 @@ import random
 #     print(rnd, end="\t")
 #     # input()
 
-bot_score = 0
-user_score = 0
-for i in range(3):
-    print('-'*15 + f" Round #{i+1} " + '-'*15)
-    while True:
-        user = input('''
-            [r] - rock
-            [s] - scissors
-            [p] - paper
-                enter choice :: ''')
-        if user == 'r' or user == 'p' or user == 's':
-            break
-        else:
-            print("\033[31m Error!!! Enter true choice \033[0m")
-    bot = random.choice('rsp')
-    print(f"\t\t Bot \t User")
-    print(f"\t\t [{bot}] \t [{user}]")
+user_win = 0
+bot_win = 0
+draw = 0
 
-    if user == 'r' and bot == 's' or user == 's' and bot == 'p' or user == 'p' and bot == 'r':
-        user_score +=1
-    elif user != bot:
-        bot_score+=1
+while True:
+    bot_score = 0
+    user_score = 0
+    for i in range(5):
+        print('-'*15 + f" Round #{i+1} " + '-'*15)
+        while True:
+            user = input('''
+                [r] - rock
+                [s] - scissors
+                [p] - paper
+                [l] - lizard
+                [v] - spock
+                    enter choice :: ''')
+            if user == 'r' or user == 'p' or user == 's' or user == 'sp' or user == 'l':
+                break
+            else:
+                print("\033[31m Error!!! Enter true choice \033[0m")
+        bot = random.choice('rsplv')
+        print(f"\t\t Bot \t User")
+        print(f"\t\t [{bot}] \t [{user}]")
 
-if user_score > bot_score:
-    print('-'*15 + f" Congratulation!!! " + '-'*15)
-elif bot_score > user_score:
-    print('-'*15 + f" Sorry! You Loser " + '-'*15)
-else:
-    print('-'*15 + f" Draw " + '-'*15)
+        if user == 'r' and bot == 's' or user == 'r' and bot == 'l'  or user == 's' and bot == 'p' or user == 's' and bot == 'l' or user == 'p' and bot == 'r' or user == 'p' and bot == 'v' or user == 'l' and bot == 'p' or user == 'l' and bot == 'v' or user == 'v' and bot == 's' or user == 'v' and bot == 'r':
+            user_score +=1
+        elif user != bot:
+            bot_score+=1
+
+    if user_score > bot_score:
+        print('-'*15 + f" Congratulation!!! " + '-'*15)
+        user_win +=1
+    elif bot_score > user_score:
+        print('-'*15 + f" Sorry! You Loser " + '-'*15)
+        bot_win +=1
+    else:
+        print('-'*15 + f" Draw " + '-'*15)
+        draw+=1
+
+    exit = input("Play again [yes/no] --> ")
+    if exit == "no":
+        break
+
+print(f'''
+    Bot  win - [{bot_win}]
+    User win - [{user_win}]
+    Draw     - [{draw}]
+''')
+
+
+
 
 # 1 - Реалізувати можливість (розпочати гру знову)
 # 2 - Розширити гру додавши нові варіант (ящірка, спок)
