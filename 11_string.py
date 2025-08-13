@@ -166,7 +166,7 @@ print(word[2])
 
 # print("================= str.replace() ===================")
 # print("", line, " ----> ", line.replace("ipsum","yellow"))
-
+# import re
 # line = "Lorem ipsum dolor sit  ipsum amet Lorem ipsum dolor sit amet ipsum"
 
 # str_1 = "1234"
@@ -175,6 +175,7 @@ print(word[2])
 
 # print("================= re.search('template', str) ===================")
 # print(str_1, "\t\t\t\t --> ", re.search('^[0-9]{4}$', str_1))
+# print(str_1, "\t\t\t\t --> ", re.search('^GFR', str_1))
 # print(str_2, "\t\t\t --> ", re.search('^[0-9]{4}$', str_2))
 # print(str_3, "\t --> ", re.search('^[0-9]{4}$', str_3))
 

@@ -66,7 +66,7 @@ print(f"After  :: {colors}")
 # colors.clear()
 # print(colors)
 
-print(f"Index :: {colors.index("gold")}")
+# print(f"Index :: {colors.index("gold")}")
 for i in range(4):
     colors.append("red")
 

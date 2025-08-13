@@ -41,24 +41,51 @@
 # print("End program")
 
 
-def printNumber(number):
-    if number < 0:
-        raise ValueError(f"{number} < 0")
-    if number > 10_000:
-        raise Exception(f"{number} > 10 000")
-    print(f"Print number :: {number}")
+# def printNumber(number):
+#     if number < 0:
+#         raise ValueError(f"{number} < 0")
+#     if number > 10_000:
+#         raise Exception(f"{number} > 10 000")
+#     print(f"Print number :: {number}")
 
 
 
-while True:
-    try:
-        number = int(input("Enter value :: "))
-        printNumber(number)
-        raise Exception("Test ggg")
-    except ValueError as msg:
-        print(f"Run block ValueError :: message :: {msg}")
-    except Exception as msg:
-        print(f"Run block Exception :: message :: {msg}")
-        break
+# while True:
+#     try:
+#         number = int(input("Enter value :: "))
+#         printNumber(number)
+#         raise Exception("Test ggg")
+#     except ValueError as msg:
+#         print(f"Run block ValueError :: message :: {msg}")
+#     except Exception as msg:
+#         print(f"Run block Exception :: message :: {msg}")
+#         break
 
-print("End program")
+# print("End program")
+
+# Попросіть користувача ввести послідовність чисел через пробіл.
+
+# У блоці try перетворіть рядок на список чисел. Для кожного елемента використовуйте вкладений блок try для перетворення на число, перехоплюючи ValueError для некоректних значень з виведенням попередження і пропуском таких елементів.
+# Після успішного перетворення обчисліть суму і, якщо потрібно, середнє значення. Перехопіть ZeroDivisionError, якщо список виявиться порожнім.
+# У блоці finally виведіть повідомлення про завершення обробки даних.
+
+numbers = input("Enter numbers :: ")
+
+try:
+    numbers = numbers.split()
+    print(numbers)
+    i = 0
+    while True:
+        if i == len(numbers):
+            break
+        print(i)
+        try:
+            number = int(numbers[i])
+            numbers[i] = number
+            i+=1
+        except ValueError:
+            numbers.remove(numbers[i])
+            
+except ValueError:
+    print(numbers)
+print(numbers)
