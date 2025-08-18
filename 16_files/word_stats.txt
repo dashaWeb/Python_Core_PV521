@@ -1,0 +1,10 @@
+ipsum :: 5 
+vitae :: 5 
+erat :: 4 
+eu :: 4 
+dolor :: 3 
+interdum :: 3 
+dui :: 3 
+non :: 3 
+ut :: 3 
+tincidunt :: 3 

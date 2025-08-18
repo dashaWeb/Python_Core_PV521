@@ -57,23 +57,43 @@ url = "16_files/text.txt"
 
 #task 6
 
+# def next_letter(n):
+#     lett = chr(ord(n) + 1)
+#     if n.isupper() and lett > 'Z':
+#         return 'A'
+#     if n.islower() and lett > 'z':
+#         return 'a'
+#     return lett
+
+# with open('16_files/data.txt') as file:
+#     text = file.read()
+
+# print(text)
+# for i in text:
+#     if not i.isalpha():
+#         continue
+#     text = text.replace(i, next_letter(i),1)
+# print(text)
+
+# with open('16_files/data.txt','w') as file:
+#     file.write(text)
+
 def next_letter(n):
     lett = chr(ord(n) + 1)
     if n.isupper() and lett > 'Z':
         return 'A'
     if n.islower() and lett > 'z':
-        return 'a'
+        return "a"
     return lett
 
-with open('16_files/data.txt') as file:
+with open("16_files/data.txt") as file:
     text = file.read()
-
 print(text)
+
 for i in text:
     if not i.isalpha():
         continue
-    text = text.replace(i, next_letter(i),1)
+    text = text.replace(i, next_letter(i), 1)
 print(text)
-
-with open('16_files/data.txt','w') as file:
+with open('encrypted.txt', 'w') as file:
     file.write(text)
